@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-def safe_print_list(my_list=[], x=0):
-    num = 0
+def safe_print_division(a, b):
+    res = 0
     try:
-        for index in range(x):
-            print(my_list[index], end='')
-            num += 1
-    except IndexError:
-        None
-        print()
-        return num
+        res = a / b
+    except ZeroDivisionError:
+        res = None
+    finally:
+        print("Inside result: {}".format(res))
+        return res
